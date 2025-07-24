@@ -5,7 +5,14 @@ from datetime import datetime
 
 # Load model and task data
 priority_model = joblib.load("priority_model.pkl")
-task_data = pd.read_csv("tasks_data.csv")
+import os
+
+if os.path.exists("task_log.csv"):
+    task_data = pd.read_csv("task_log.csv")
+else:
+    # fallback if no user logs yet
+    task_data = pd.read_csv("tasks_data.csv")
+
 
 employees = ['Emp_A', 'Emp_B', 'Emp_C']
 
@@ -43,6 +50,22 @@ if page == "🔍 Predict Task":
         assigned_employee = min(workload, key=workload.get)
 
         st.info(f"👤 Assigned to: **{assigned_employee}**")
+        new_task = {
+            'Task_Name': task_name,
+            'Estimated_Time_Minutes': estimated_time,
+            'Urgency_Score': urgency,
+            'Days_Left': days_left,
+            'Task_Type': task_type,
+            'Priority': predicted_priority,
+            'Assigned_Employee': assigned_employee
+        }
+
+        # Convert to DataFrame and append to CSV
+        new_df = pd.DataFrame([new_task])
+        if os.path.exists("task_log.csv"):
+           new_df.to_csv("task_log.csv", mode='a', header=False, index=False)
+        else:
+           new_df.to_csv("task_log.csv", index=False)
 
 elif page == "📊 Dashboard":
     st.header("📊 Task Assignment Dashboard")
