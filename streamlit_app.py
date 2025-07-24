@@ -3,6 +3,9 @@ import pandas as pd
 import joblib
 from datetime import datetime
 
+# Load the original task type options from the template file
+template_df = pd.read_csv("tasks_data.csv")
+
 # Load model and task data
 priority_model = joblib.load("priority_model.pkl")
 import os
@@ -27,7 +30,7 @@ if page == "🔍 Predict Task":
     with st.form("task_form"):
         task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
         estimated_time = st.slider("Estimated Time (in minutes)", 15, 480, 60)
-        task_type = st.selectbox("Task Type", task_data['Task_Type'].unique())
+        task_type = st.selectbox("Task Type", template_df['Task_Type'].unique())
         urgency = st.slider("Urgency Score", 1, 10, 5)
         deadline = st.date_input("Deadline", min_value=datetime.today())
         submitted = st.form_submit_button("📌 Predict & Assign")
