@@ -2,6 +2,24 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
+def recommend_task_type(task_name):
+    task_name = task_name.lower()
+
+    keyword_map = {
+        "analysis": ["analyze", "analysis", "assess", "evaluate"],
+        "design": ["design", "mockup", "layout", "wireframe"],
+        "development": ["build", "develop", "code", "implement"],
+        "testing": ["test", "debug", "qa", "verify"],
+        "research": ["research", "study", "explore", "read"],
+        "documentation": ["write", "doc", "document", "manual"],
+    }
+
+    for task_type, keywords in keyword_map.items():
+        for keyword in keywords:
+            if keyword in task_name:
+                return task_type.capitalize()
+
+    return "Analysis"  # fallback
 
 # Load the original task type options from the template file
 template_df = pd.read_csv("tasks_data.csv")
@@ -44,8 +62,20 @@ if page == "🔍 Predict Task":
 
     with st.form("task_form"):
         task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
+        if task_name.strip():
+            suggested_type = recommend_task_type(task_name)
+            st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
+        else:
+            suggested_type = "Analysis"
+
         estimated_time = st.slider("Estimated Time (in minutes)", 15, 480, 60)
-        task_type = st.selectbox("Task Type", template_df['Task_Type'].unique())
+        task_type = st.selectbox(
+             "Task Type", 
+              template_df['Task_Type'].unique(), 
+              index=list(template_df['Task_Type'].unique()).index(suggested_type) 
+              if suggested_type in template_df['Task_Type'].unique() else 0
+        )
+
         urgency = st.slider("Urgency Score", 1, 10, 5)
         deadline = st.date_input("Deadline", min_value=datetime.today())
         submitted = st.form_submit_button("📌 Predict & Assign")
