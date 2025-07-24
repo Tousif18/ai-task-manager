@@ -58,3 +58,10 @@ elif page == "📊 Dashboard":
         st.scatter_chart(task_data[['Urgency_Score', 'Priority_Score']])
     else:
         st.warning("Priority_Score not available for scatter plot.")
+    st.subheader("⬇️ Export Assigned Tasks")
+    st.download_button(
+       label="Download as CSV",
+       data=task_data.to_csv(index=False),
+       file_name='assigned_tasks.csv',
+       mime='text/csv'
+    )
