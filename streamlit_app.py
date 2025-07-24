@@ -34,8 +34,10 @@ if page == "🔍 Predict Task":
                                columns=['Task_Length', 'Estimated_Time_Minutes', 'Urgency_Score', 'Days_Left', 'Task_Type_Encoded'])
 
         predicted_priority = priority_model.predict(X_input)[0]
+        confidence = priority_model.predict_proba(X_input).max()
+        
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
-
+        st.caption(f"🤖 Model confidence: {confidence:.2%}")
         workload = task_data['Assigned_Employee'].value_counts().to_dict()
         workload = {emp: workload.get(emp, 0) for emp in employees}
         assigned_employee = min(workload, key=workload.get)
