@@ -83,7 +83,13 @@ if page == "🔍 Predict Task":
     if submitted:
         task_length = len(task_name.split())
         days_left = (deadline - datetime.today().date()).days
-        task_type_encoded = task_data['Task_Type'].astype('category').cat.categories.get_loc(task_type)
+        # Encode task type safely using template_df (always has all types)
+        all_types = template_df['Task_Type'].astype('category').cat.categories
+        if task_type in all_types:
+          task_type_encoded = all_types.get_loc(task_type)
+        else:
+          task_type_encoded = 0  # fallback to first type
+
 
         X_input = pd.DataFrame([[task_length, estimated_time, urgency, days_left, task_type_encoded]],
                                columns=['Task_Length', 'Estimated_Time_Minutes', 'Urgency_Score', 'Days_Left', 'Task_Type_Encoded'])
