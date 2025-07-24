@@ -1,101 +1,101 @@
-Task_ID,Task_Name,Priority,Deadline,Estimated_Time,Task_Type,Dependency,Employee_ID,Completion_Status,Urgency_Score,Processed_Text,Cluster,Days_Left,Priority_Score,Norm_Urgency,Norm_Priority,Norm_Deadline,Recommendation_Score,Task_Length,Task_Type_Encoded,Estimated_Time_Minutes,Assigned_Employee
-1,Task 1: Sample Task Description,Medium,2025-01-28 09:00:00,2 hours,Analysis,,101,In Progress,2,task sample task description,0,0,2,0.2,0.6666666666666666,1.0,0.5933333333333334,5,0,120,Emp_A
-2,Task 2: Sample Task Description,Low,2025-01-28 10:00:00,3 hours,Review,Task_ID 1,102,Completed,3,task sample task description,0,0,1,0.3,0.3333333333333333,1.0,0.5566666666666666,5,3,180,Emp_B
-3,Task 3: Sample Task Description,High,2025-01-28 11:00:00,4 hours,Meeting,Task_ID 2,103,Pending,4,task sample task description,0,0,3,0.4,1.0,1.0,0.72,5,1,240,Emp_C
-4,Task 4: Sample Task Description,Medium,2025-01-28 12:00:00,5 hours,Planning,Task_ID 3,104,In Progress,5,task sample task description,0,0,2,0.5,0.6666666666666666,1.0,0.6833333333333333,5,2,300,Emp_A
-5,Task 5: Sample Task Description,Low,2025-01-28 13:00:00,1 hours,Analysis,Task_ID 4,105,Completed,6,task sample task description,0,0,1,0.6,0.3333333333333333,1.0,0.6466666666666667,5,0,60,Emp_B
-6,Task 6: Sample Task Description,High,2025-01-28 14:00:00,2 hours,Review,Task_ID 5,106,Pending,7,task sample task description,0,0,3,0.7,1.0,1.0,0.81,5,3,120,Emp_B
-7,Task 7: Sample Task Description,Medium,2025-01-28 15:00:00,3 hours,Meeting,Task_ID 6,107,In Progress,8,task sample task description,0,0,2,0.8,0.6666666666666666,1.0,0.7733333333333333,5,1,180,Emp_C
-8,Task 8: Sample Task Description,Low,2025-01-28 16:00:00,4 hours,Planning,Task_ID 7,108,Completed,9,task sample task description,0,0,1,0.9,0.3333333333333333,1.0,0.7366666666666667,5,2,240,Emp_B
-9,Task 9: Sample Task Description,High,2025-01-28 17:00:00,5 hours,Analysis,Task_ID 8,109,Pending,10,task sample task description,0,0,3,1.0,1.0,1.0,0.8999999999999999,5,0,300,Emp_A
-10,Task 10: Sample Task Description,Medium,2025-01-28 18:00:00,1 hours,Review,Task_ID 9,110,In Progress,1,task sample task description,0,0,2,0.1,0.6666666666666666,1.0,0.5633333333333334,5,3,60,Emp_C
-11,Task 11: Sample Task Description,Low,2025-01-28 19:00:00,2 hours,Meeting,Task_ID 10,111,Completed,2,task sample task description,0,0,1,0.2,0.3333333333333333,1.0,0.5266666666666667,5,1,120,Emp_C
-12,Task 12: Sample Task Description,High,2025-01-28 20:00:00,3 hours,Planning,Task_ID 11,112,Pending,3,task sample task description,0,0,3,0.3,1.0,1.0,0.69,5,2,180,Emp_B
-13,Task 13: Sample Task Description,Medium,2025-01-28 21:00:00,4 hours,Analysis,Task_ID 12,113,In Progress,4,task sample task description,0,0,2,0.4,0.6666666666666666,1.0,0.6533333333333333,5,0,240,Emp_C
-14,Task 14: Sample Task Description,Low,2025-01-28 22:00:00,5 hours,Review,Task_ID 13,114,Completed,5,task sample task description,0,0,1,0.5,0.3333333333333333,1.0,0.6166666666666667,5,3,300,Emp_A
-15,Task 15: Sample Task Description,High,2025-01-28 23:00:00,1 hours,Meeting,Task_ID 14,115,Pending,6,task sample task description,0,0,3,0.6,1.0,1.0,0.78,5,1,60,Emp_B
-16,Task 16: Sample Task Description,Medium,2025-01-29 00:00:00,2 hours,Planning,Task_ID 15,116,In Progress,7,task sample task description,0,0,2,0.7,0.6666666666666666,1.0,0.7433333333333333,5,2,120,Emp_B
-17,Task 17: Sample Task Description,Low,2025-01-29 01:00:00,3 hours,Analysis,Task_ID 16,117,Completed,8,task sample task description,0,0,1,0.8,0.3333333333333333,1.0,0.7066666666666667,5,0,180,Emp_C
-18,Task 18: Sample Task Description,High,2025-01-29 02:00:00,4 hours,Review,Task_ID 17,118,Pending,9,task sample task description,0,0,3,0.9,1.0,1.0,0.8700000000000001,5,3,240,Emp_B
-19,Task 19: Sample Task Description,Medium,2025-01-29 03:00:00,5 hours,Meeting,Task_ID 18,119,In Progress,10,task sample task description,0,0,2,1.0,0.6666666666666666,1.0,0.8333333333333333,5,1,300,Emp_A
-20,Task 20: Sample Task Description,Low,2025-01-29 04:00:00,1 hours,Planning,Task_ID 19,120,Completed,1,task sample task description,0,0,1,0.1,0.3333333333333333,1.0,0.4966666666666667,5,2,60,Emp_C
-21,Task 21: Sample Task Description,High,2025-01-29 05:00:00,2 hours,Analysis,Task_ID 20,121,Pending,2,task sample task description,0,0,3,0.2,1.0,1.0,0.66,5,0,120,Emp_C
-22,Task 22: Sample Task Description,Medium,2025-01-29 06:00:00,3 hours,Review,Task_ID 21,122,In Progress,3,task sample task description,0,0,2,0.3,0.6666666666666666,1.0,0.6233333333333333,5,3,180,Emp_B
-23,Task 23: Sample Task Description,Low,2025-01-29 07:00:00,4 hours,Meeting,Task_ID 22,123,Completed,4,task sample task description,0,0,1,0.4,0.3333333333333333,1.0,0.5866666666666667,5,1,240,Emp_C
-24,Task 24: Sample Task Description,High,2025-01-29 08:00:00,5 hours,Planning,Task_ID 23,124,Pending,5,task sample task description,0,0,3,0.5,1.0,1.0,0.75,5,2,300,Emp_A
-25,Task 25: Sample Task Description,Medium,2025-01-29 09:00:00,1 hours,Analysis,Task_ID 24,125,In Progress,6,task sample task description,0,0,2,0.6,0.6666666666666666,1.0,0.7133333333333334,5,0,60,Emp_B
-26,Task 26: Sample Task Description,Low,2025-01-29 10:00:00,2 hours,Review,Task_ID 25,126,Completed,7,task sample task description,0,0,1,0.7,0.3333333333333333,1.0,0.6766666666666666,5,3,120,Emp_B
-27,Task 27: Sample Task Description,High,2025-01-29 11:00:00,3 hours,Meeting,Task_ID 26,127,Pending,8,task sample task description,0,0,3,0.8,1.0,1.0,0.8400000000000001,5,1,180,Emp_C
-28,Task 28: Sample Task Description,Medium,2025-01-29 12:00:00,4 hours,Planning,Task_ID 27,128,In Progress,9,task sample task description,0,0,2,0.9,0.6666666666666666,1.0,0.8033333333333333,5,2,240,Emp_B
-29,Task 29: Sample Task Description,Low,2025-01-29 13:00:00,5 hours,Analysis,Task_ID 28,129,Completed,10,task sample task description,0,0,1,1.0,0.3333333333333333,1.0,0.7666666666666666,5,0,300,Emp_A
-30,Task 30: Sample Task Description,High,2025-01-29 14:00:00,1 hours,Review,Task_ID 29,130,Pending,1,task sample task description,0,0,3,0.1,1.0,1.0,0.6300000000000001,5,3,60,Emp_C
-31,Task 31: Sample Task Description,Medium,2025-01-29 15:00:00,2 hours,Meeting,Task_ID 30,131,In Progress,2,task sample task description,0,0,2,0.2,0.6666666666666666,1.0,0.5933333333333334,5,1,120,Emp_C
-32,Task 32: Sample Task Description,Low,2025-01-29 16:00:00,3 hours,Planning,Task_ID 31,132,Completed,3,task sample task description,0,0,1,0.3,0.3333333333333333,1.0,0.5566666666666666,5,2,180,Emp_B
-33,Task 33: Sample Task Description,High,2025-01-29 17:00:00,4 hours,Analysis,Task_ID 32,133,Pending,4,task sample task description,0,0,3,0.4,1.0,1.0,0.72,5,0,240,Emp_C
-34,Task 34: Sample Task Description,Medium,2025-01-29 18:00:00,5 hours,Review,Task_ID 33,134,In Progress,5,task sample task description,0,0,2,0.5,0.6666666666666666,1.0,0.6833333333333333,5,3,300,Emp_A
-35,Task 35: Sample Task Description,Low,2025-01-29 19:00:00,1 hours,Meeting,Task_ID 34,135,Completed,6,task sample task description,0,0,1,0.6,0.3333333333333333,1.0,0.6466666666666667,5,1,60,Emp_B
-36,Task 36: Sample Task Description,High,2025-01-29 20:00:00,2 hours,Planning,Task_ID 35,136,Pending,7,task sample task description,0,0,3,0.7,1.0,1.0,0.81,5,2,120,Emp_B
-37,Task 37: Sample Task Description,Medium,2025-01-29 21:00:00,3 hours,Analysis,Task_ID 36,137,In Progress,8,task sample task description,0,0,2,0.8,0.6666666666666666,1.0,0.7733333333333333,5,0,180,Emp_C
-38,Task 38: Sample Task Description,Low,2025-01-29 22:00:00,4 hours,Review,Task_ID 37,138,Completed,9,task sample task description,0,0,1,0.9,0.3333333333333333,1.0,0.7366666666666667,5,3,240,Emp_B
-39,Task 39: Sample Task Description,High,2025-01-29 23:00:00,5 hours,Meeting,Task_ID 38,139,Pending,10,task sample task description,0,0,3,1.0,1.0,1.0,0.8999999999999999,5,1,300,Emp_A
-40,Task 40: Sample Task Description,Medium,2025-01-30 00:00:00,1 hours,Planning,Task_ID 39,140,In Progress,1,task sample task description,0,0,2,0.1,0.6666666666666666,1.0,0.5633333333333334,5,2,60,Emp_C
-41,Task 41: Sample Task Description,Low,2025-01-30 01:00:00,2 hours,Analysis,Task_ID 40,141,Completed,2,task sample task description,0,0,1,0.2,0.3333333333333333,1.0,0.5266666666666667,5,0,120,Emp_C
-42,Task 42: Sample Task Description,High,2025-01-30 02:00:00,3 hours,Review,Task_ID 41,142,Pending,3,task sample task description,0,0,3,0.3,1.0,1.0,0.69,5,3,180,Emp_B
-43,Task 43: Sample Task Description,Medium,2025-01-30 03:00:00,4 hours,Meeting,Task_ID 42,143,In Progress,4,task sample task description,0,0,2,0.4,0.6666666666666666,1.0,0.6533333333333333,5,1,240,Emp_C
-44,Task 44: Sample Task Description,Low,2025-01-30 04:00:00,5 hours,Planning,Task_ID 43,144,Completed,5,task sample task description,0,0,1,0.5,0.3333333333333333,1.0,0.6166666666666667,5,2,300,Emp_A
-45,Task 45: Sample Task Description,High,2025-01-30 05:00:00,1 hours,Analysis,Task_ID 44,145,Pending,6,task sample task description,0,0,3,0.6,1.0,1.0,0.78,5,0,60,Emp_B
-46,Task 46: Sample Task Description,Medium,2025-01-30 06:00:00,2 hours,Review,Task_ID 45,146,In Progress,7,task sample task description,0,0,2,0.7,0.6666666666666666,1.0,0.7433333333333333,5,3,120,Emp_B
-47,Task 47: Sample Task Description,Low,2025-01-30 07:00:00,3 hours,Meeting,Task_ID 46,147,Completed,8,task sample task description,0,0,1,0.8,0.3333333333333333,1.0,0.7066666666666667,5,1,180,Emp_C
-48,Task 48: Sample Task Description,High,2025-01-30 08:00:00,4 hours,Planning,Task_ID 47,148,Pending,9,task sample task description,0,0,3,0.9,1.0,1.0,0.8700000000000001,5,2,240,Emp_B
-49,Task 49: Sample Task Description,Medium,2025-01-30 09:00:00,5 hours,Analysis,Task_ID 48,149,In Progress,10,task sample task description,0,0,2,1.0,0.6666666666666666,1.0,0.8333333333333333,5,0,300,Emp_A
-50,Task 50: Sample Task Description,Low,2025-01-30 10:00:00,1 hours,Review,Task_ID 49,150,Completed,1,task sample task description,0,0,1,0.1,0.3333333333333333,1.0,0.4966666666666667,5,3,60,Emp_C
-51,Task 51: Sample Task Description,High,2025-01-30 11:00:00,2 hours,Meeting,Task_ID 50,151,Pending,2,task sample task description,0,0,3,0.2,1.0,1.0,0.66,5,1,120,Emp_C
-52,Task 52: Sample Task Description,Medium,2025-01-30 12:00:00,3 hours,Planning,Task_ID 51,152,In Progress,3,task sample task description,0,0,2,0.3,0.6666666666666666,1.0,0.6233333333333333,5,2,180,Emp_B
-53,Task 53: Sample Task Description,Low,2025-01-30 13:00:00,4 hours,Analysis,Task_ID 52,153,Completed,4,task sample task description,0,0,1,0.4,0.3333333333333333,1.0,0.5866666666666667,5,0,240,Emp_C
-54,Task 54: Sample Task Description,High,2025-01-30 14:00:00,5 hours,Review,Task_ID 53,154,Pending,5,task sample task description,0,0,3,0.5,1.0,1.0,0.75,5,3,300,Emp_A
-55,Task 55: Sample Task Description,Medium,2025-01-30 15:00:00,1 hours,Meeting,Task_ID 54,155,In Progress,6,task sample task description,0,0,2,0.6,0.6666666666666666,1.0,0.7133333333333334,5,1,60,Emp_B
-56,Task 56: Sample Task Description,Low,2025-01-30 16:00:00,2 hours,Planning,Task_ID 55,156,Completed,7,task sample task description,0,0,1,0.7,0.3333333333333333,1.0,0.6766666666666666,5,2,120,Emp_B
-57,Task 57: Sample Task Description,High,2025-01-30 17:00:00,3 hours,Analysis,Task_ID 56,157,Pending,8,task sample task description,0,0,3,0.8,1.0,1.0,0.8400000000000001,5,0,180,Emp_C
-58,Task 58: Sample Task Description,Medium,2025-01-30 18:00:00,4 hours,Review,Task_ID 57,158,In Progress,9,task sample task description,0,0,2,0.9,0.6666666666666666,1.0,0.8033333333333333,5,3,240,Emp_B
-59,Task 59: Sample Task Description,Low,2025-01-30 19:00:00,5 hours,Meeting,Task_ID 58,159,Completed,10,task sample task description,0,0,1,1.0,0.3333333333333333,1.0,0.7666666666666666,5,1,300,Emp_A
-60,Task 60: Sample Task Description,High,2025-01-30 20:00:00,1 hours,Planning,Task_ID 59,160,Pending,1,task sample task description,0,0,3,0.1,1.0,1.0,0.6300000000000001,5,2,60,Emp_C
-61,Task 61: Sample Task Description,Medium,2025-01-30 21:00:00,2 hours,Analysis,Task_ID 60,161,In Progress,2,task sample task description,0,0,2,0.2,0.6666666666666666,1.0,0.5933333333333334,5,0,120,Emp_C
-62,Task 62: Sample Task Description,Low,2025-01-30 22:00:00,3 hours,Review,Task_ID 61,162,Completed,3,task sample task description,0,0,1,0.3,0.3333333333333333,1.0,0.5566666666666666,5,3,180,Emp_B
-63,Task 63: Sample Task Description,High,2025-01-30 23:00:00,4 hours,Meeting,Task_ID 62,163,Pending,4,task sample task description,0,0,3,0.4,1.0,1.0,0.72,5,1,240,Emp_C
-64,Task 64: Sample Task Description,Medium,2025-01-31 00:00:00,5 hours,Planning,Task_ID 63,164,In Progress,5,task sample task description,0,0,2,0.5,0.6666666666666666,1.0,0.6833333333333333,5,2,300,Emp_A
-65,Task 65: Sample Task Description,Low,2025-01-31 01:00:00,1 hours,Analysis,Task_ID 64,165,Completed,6,task sample task description,0,0,1,0.6,0.3333333333333333,1.0,0.6466666666666667,5,0,60,Emp_B
-66,Task 66: Sample Task Description,High,2025-01-31 02:00:00,2 hours,Review,Task_ID 65,166,Pending,7,task sample task description,0,0,3,0.7,1.0,1.0,0.81,5,3,120,Emp_B
-67,Task 67: Sample Task Description,Medium,2025-01-31 03:00:00,3 hours,Meeting,Task_ID 66,167,In Progress,8,task sample task description,0,0,2,0.8,0.6666666666666666,1.0,0.7733333333333333,5,1,180,Emp_C
-68,Task 68: Sample Task Description,Low,2025-01-31 04:00:00,4 hours,Planning,Task_ID 67,168,Completed,9,task sample task description,0,0,1,0.9,0.3333333333333333,1.0,0.7366666666666667,5,2,240,Emp_B
-69,Task 69: Sample Task Description,High,2025-01-31 05:00:00,5 hours,Analysis,Task_ID 68,169,Pending,10,task sample task description,0,0,3,1.0,1.0,1.0,0.8999999999999999,5,0,300,Emp_A
-70,Task 70: Sample Task Description,Medium,2025-01-31 06:00:00,1 hours,Review,Task_ID 69,170,In Progress,1,task sample task description,0,0,2,0.1,0.6666666666666666,1.0,0.5633333333333334,5,3,60,Emp_C
-71,Task 71: Sample Task Description,Low,2025-01-31 07:00:00,2 hours,Meeting,Task_ID 70,171,Completed,2,task sample task description,0,0,1,0.2,0.3333333333333333,1.0,0.5266666666666667,5,1,120,Emp_C
-72,Task 72: Sample Task Description,High,2025-01-31 08:00:00,3 hours,Planning,Task_ID 71,172,Pending,3,task sample task description,0,0,3,0.3,1.0,1.0,0.69,5,2,180,Emp_B
-73,Task 73: Sample Task Description,Medium,2025-01-31 09:00:00,4 hours,Analysis,Task_ID 72,173,In Progress,4,task sample task description,0,0,2,0.4,0.6666666666666666,1.0,0.6533333333333333,5,0,240,Emp_C
-74,Task 74: Sample Task Description,Low,2025-01-31 10:00:00,5 hours,Review,Task_ID 73,174,Completed,5,task sample task description,0,0,1,0.5,0.3333333333333333,1.0,0.6166666666666667,5,3,300,Emp_A
-75,Task 75: Sample Task Description,High,2025-01-31 11:00:00,1 hours,Meeting,Task_ID 74,175,Pending,6,task sample task description,0,0,3,0.6,1.0,1.0,0.78,5,1,60,Emp_B
-76,Task 76: Sample Task Description,Medium,2025-01-31 12:00:00,2 hours,Planning,Task_ID 75,176,In Progress,7,task sample task description,0,0,2,0.7,0.6666666666666666,1.0,0.7433333333333333,5,2,120,Emp_B
-77,Task 77: Sample Task Description,Low,2025-01-31 13:00:00,3 hours,Analysis,Task_ID 76,177,Completed,8,task sample task description,0,0,1,0.8,0.3333333333333333,1.0,0.7066666666666667,5,0,180,Emp_C
-78,Task 78: Sample Task Description,High,2025-01-31 14:00:00,4 hours,Review,Task_ID 77,178,Pending,9,task sample task description,0,0,3,0.9,1.0,1.0,0.8700000000000001,5,3,240,Emp_B
-79,Task 79: Sample Task Description,Medium,2025-01-31 15:00:00,5 hours,Meeting,Task_ID 78,179,In Progress,10,task sample task description,0,0,2,1.0,0.6666666666666666,1.0,0.8333333333333333,5,1,300,Emp_A
-80,Task 80: Sample Task Description,Low,2025-01-31 16:00:00,1 hours,Planning,Task_ID 79,180,Completed,1,task sample task description,0,0,1,0.1,0.3333333333333333,1.0,0.4966666666666667,5,2,60,Emp_C
-81,Task 81: Sample Task Description,High,2025-01-31 17:00:00,2 hours,Analysis,Task_ID 80,181,Pending,2,task sample task description,0,0,3,0.2,1.0,1.0,0.66,5,0,120,Emp_C
-82,Task 82: Sample Task Description,Medium,2025-01-31 18:00:00,3 hours,Review,Task_ID 81,182,In Progress,3,task sample task description,0,0,2,0.3,0.6666666666666666,1.0,0.6233333333333333,5,3,180,Emp_B
-83,Task 83: Sample Task Description,Low,2025-01-31 19:00:00,4 hours,Meeting,Task_ID 82,183,Completed,4,task sample task description,0,0,1,0.4,0.3333333333333333,1.0,0.5866666666666667,5,1,240,Emp_C
-84,Task 84: Sample Task Description,High,2025-01-31 20:00:00,5 hours,Planning,Task_ID 83,184,Pending,5,task sample task description,0,0,3,0.5,1.0,1.0,0.75,5,2,300,Emp_A
-85,Task 85: Sample Task Description,Medium,2025-01-31 21:00:00,1 hours,Analysis,Task_ID 84,185,In Progress,6,task sample task description,0,0,2,0.6,0.6666666666666666,1.0,0.7133333333333334,5,0,60,Emp_B
-86,Task 86: Sample Task Description,Low,2025-01-31 22:00:00,2 hours,Review,Task_ID 85,186,Completed,7,task sample task description,0,0,1,0.7,0.3333333333333333,1.0,0.6766666666666666,5,3,120,Emp_B
-87,Task 87: Sample Task Description,High,2025-01-31 23:00:00,3 hours,Meeting,Task_ID 86,187,Pending,8,task sample task description,0,0,3,0.8,1.0,1.0,0.8400000000000001,5,1,180,Emp_C
-88,Task 88: Sample Task Description,Medium,2025-02-01 00:00:00,4 hours,Planning,Task_ID 87,188,In Progress,9,task sample task description,0,0,2,0.9,0.6666666666666666,1.0,0.8033333333333333,5,2,240,Emp_B
-89,Task 89: Sample Task Description,Low,2025-02-01 01:00:00,5 hours,Analysis,Task_ID 88,189,Completed,10,task sample task description,0,0,1,1.0,0.3333333333333333,1.0,0.7666666666666666,5,0,300,Emp_A
-90,Task 90: Sample Task Description,High,2025-02-01 02:00:00,1 hours,Review,Task_ID 89,190,Pending,1,task sample task description,0,0,3,0.1,1.0,1.0,0.6300000000000001,5,3,60,Emp_C
-91,Task 91: Sample Task Description,Medium,2025-02-01 03:00:00,2 hours,Meeting,Task_ID 90,191,In Progress,2,task sample task description,0,0,2,0.2,0.6666666666666666,1.0,0.5933333333333334,5,1,120,Emp_C
-92,Task 92: Sample Task Description,Low,2025-02-01 04:00:00,3 hours,Planning,Task_ID 91,192,Completed,3,task sample task description,0,0,1,0.3,0.3333333333333333,1.0,0.5566666666666666,5,2,180,Emp_B
-93,Task 93: Sample Task Description,High,2025-02-01 05:00:00,4 hours,Analysis,Task_ID 92,193,Pending,4,task sample task description,0,0,3,0.4,1.0,1.0,0.72,5,0,240,Emp_C
-94,Task 94: Sample Task Description,Medium,2025-02-01 06:00:00,5 hours,Review,Task_ID 93,194,In Progress,5,task sample task description,0,0,2,0.5,0.6666666666666666,1.0,0.6833333333333333,5,3,300,Emp_A
-95,Task 95: Sample Task Description,Low,2025-02-01 07:00:00,1 hours,Meeting,Task_ID 94,195,Completed,6,task sample task description,0,0,1,0.6,0.3333333333333333,1.0,0.6466666666666667,5,1,60,Emp_B
-96,Task 96: Sample Task Description,High,2025-02-01 08:00:00,2 hours,Planning,Task_ID 95,196,Pending,7,task sample task description,0,0,3,0.7,1.0,1.0,0.81,5,2,120,Emp_B
-97,Task 97: Sample Task Description,Medium,2025-02-01 09:00:00,3 hours,Analysis,Task_ID 96,197,In Progress,8,task sample task description,0,0,2,0.8,0.6666666666666666,1.0,0.7733333333333333,5,0,180,Emp_C
-98,Task 98: Sample Task Description,Low,2025-02-01 10:00:00,4 hours,Review,Task_ID 97,198,Completed,9,task sample task description,0,0,1,0.9,0.3333333333333333,1.0,0.7366666666666667,5,3,240,Emp_B
-99,Task 99: Sample Task Description,High,2025-02-01 11:00:00,5 hours,Meeting,Task_ID 98,199,Pending,10,task sample task description,0,0,3,1.0,1.0,1.0,0.8999999999999999,5,1,300,Emp_A
-100,Task 100: Sample Task Description,Medium,2025-02-01 12:00:00,1 hours,Planning,Task_ID 99,200,In Progress,1,task sample task description,0,0,2,0.1,0.6666666666666666,1.0,0.5633333333333334,5,2,60,Emp_C
+Task_ID	Task_Name	Priority	Deadline	Estimated_Time	Task_Type	Dependency	Employee_ID	Completion_Status	Urgency_Score	Processed_Text	Cluster	Days_Left	Priority_Score	Norm_Urgency	Norm_Priority	Norm_Deadline	Recommendation_Score	Task_Length	Task_Type_Encoded	Estimated_Time_Minutes	Assigned_Employee
+1	Task 1: Sample Task Description	Medium	28-01-2025 09:00	2 hours	Analysis		101	In Progress	2	task sample task description	0	0	2	0.2	0.666666667	1	0.593333333	5	0	120	Emp_A
+2	Task 2: Sample Task Description	Low	28-01-2025 10:00	3 hours	Review	Task_ID 1	102	Completed	3	task sample task description	0	0	1	0.3	0.333333333	1	0.556666667	5	3	180	Emp_B
+3	Task 3: Sample Task Description	High	28-01-2025 11:00	4 hours	Meeting	Task_ID 2	103	Pending	4	task sample task description	0	0	3	0.4	1	1	0.72	5	1	240	Emp_C
+4	Task 4: Sample Task Description	Medium	28-01-2025 12:00	5 hours	Planning	Task_ID 3	104	In Progress	5	task sample task description	0	0	2	0.5	0.666666667	1	0.683333333	5	2	300	Emp_A
+5	Task 5: Sample Task Description	Low	28-01-2025 13:00	1 hours	Analysis	Task_ID 4	105	Completed	6	task sample task description	0	0	1	0.6	0.333333333	1	0.646666667	5	0	60	Emp_B
+6	Task 6: Sample Task Description	High	28-01-2025 14:00	2 hours	Review	Task_ID 5	106	Pending	7	task sample task description	0	0	3	0.7	1	1	0.81	5	3	120	Emp_B
+7	Task 7: Sample Task Description	Medium	28-01-2025 15:00	3 hours	Meeting	Task_ID 6	107	In Progress	8	task sample task description	0	0	2	0.8	0.666666667	1	0.773333333	5	1	180	Emp_C
+8	Task 8: Sample Task Description	Low	28-01-2025 16:00	4 hours	Planning	Task_ID 7	108	Completed	9	task sample task description	0	0	1	0.9	0.333333333	1	0.736666667	5	2	240	Emp_B
+9	Task 9: Sample Task Description	High	28-01-2025 17:00	5 hours	Analysis	Task_ID 8	109	Pending	10	task sample task description	0	0	3	1	1	1	0.9	5	0	300	Emp_A
+10	Task 10: Sample Task Description	Medium	28-01-2025 18:00	1 hours	Review	Task_ID 9	110	In Progress	1	task sample task description	0	0	2	0.1	0.666666667	1	0.563333333	5	3	60	Emp_C
+11	Task 11: Sample Task Description	Low	28-01-2025 19:00	2 hours	Meeting	Task_ID 10	111	Completed	2	task sample task description	0	0	1	0.2	0.333333333	1	0.526666667	5	1	120	Emp_C
+12	Task 12: Sample Task Description	High	28-01-2025 20:00	3 hours	Planning	Task_ID 11	112	Pending	3	task sample task description	0	0	3	0.3	1	1	0.69	5	2	180	Emp_B
+13	Task 13: Sample Task Description	Medium	28-01-2025 21:00	4 hours	Analysis	Task_ID 12	113	In Progress	4	task sample task description	0	0	2	0.4	0.666666667	1	0.653333333	5	0	240	Emp_C
+14	Task 14: Sample Task Description	Low	28-01-2025 22:00	5 hours	Review	Task_ID 13	114	Completed	5	task sample task description	0	0	1	0.5	0.333333333	1	0.616666667	5	3	300	Emp_A
+15	Task 15: Sample Task Description	High	28-01-2025 23:00	1 hours	Meeting	Task_ID 14	115	Pending	6	task sample task description	0	0	3	0.6	1	1	0.78	5	1	60	Emp_B
+16	Task 16: Sample Task Description	Medium	29-01-2025 00:00	2 hours	Planning	Task_ID 15	116	In Progress	7	task sample task description	0	0	2	0.7	0.666666667	1	0.743333333	5	2	120	Emp_B
+17	Task 17: Sample Task Description	Low	29-01-2025 01:00	3 hours	Analysis	Task_ID 16	117	Completed	8	task sample task description	0	0	1	0.8	0.333333333	1	0.706666667	5	0	180	Emp_C
+18	Task 18: Sample Task Description	High	29-01-2025 02:00	4 hours	Review	Task_ID 17	118	Pending	9	task sample task description	0	0	3	0.9	1	1	0.87	5	3	240	Emp_B
+19	Task 19: Sample Task Description	Medium	29-01-2025 03:00	5 hours	Meeting	Task_ID 18	119	In Progress	10	task sample task description	0	0	2	1	0.666666667	1	0.833333333	5	1	300	Emp_A
+20	Task 20: Sample Task Description	Low	29-01-2025 04:00	1 hours	Planning	Task_ID 19	120	Completed	1	task sample task description	0	0	1	0.1	0.333333333	1	0.496666667	5	2	60	Emp_C
+21	Task 21: Sample Task Description	High	29-01-2025 05:00	2 hours	Analysis	Task_ID 20	121	Pending	2	task sample task description	0	0	3	0.2	1	1	0.66	5	0	120	Emp_C
+22	Task 22: Sample Task Description	Medium	29-01-2025 06:00	3 hours	Review	Task_ID 21	122	In Progress	3	task sample task description	0	0	2	0.3	0.666666667	1	0.623333333	5	3	180	Emp_B
+23	Task 23: Sample Task Description	Low	29-01-2025 07:00	4 hours	Meeting	Task_ID 22	123	Completed	4	task sample task description	0	0	1	0.4	0.333333333	1	0.586666667	5	1	240	Emp_C
+24	Task 24: Sample Task Description	High	29-01-2025 08:00	5 hours	Planning	Task_ID 23	124	Pending	5	task sample task description	0	0	3	0.5	1	1	0.75	5	2	300	Emp_A
+25	Task 25: Sample Task Description	Medium	29-01-2025 09:00	1 hours	Analysis	Task_ID 24	125	In Progress	6	task sample task description	0	0	2	0.6	0.666666667	1	0.713333333	5	0	60	Emp_B
+26	Task 26: Sample Task Description	Low	29-01-2025 10:00	2 hours	Review	Task_ID 25	126	Completed	7	task sample task description	0	0	1	0.7	0.333333333	1	0.676666667	5	3	120	Emp_B
+27	Task 27: Sample Task Description	High	29-01-2025 11:00	3 hours	Meeting	Task_ID 26	127	Pending	8	task sample task description	0	0	3	0.8	1	1	0.84	5	1	180	Emp_C
+28	Task 28: Sample Task Description	Medium	29-01-2025 12:00	4 hours	Planning	Task_ID 27	128	In Progress	9	task sample task description	0	0	2	0.9	0.666666667	1	0.803333333	5	2	240	Emp_B
+29	Task 29: Sample Task Description	Low	29-01-2025 13:00	5 hours	Analysis	Task_ID 28	129	Completed	10	task sample task description	0	0	1	1	0.333333333	1	0.766666667	5	0	300	Emp_A
+30	Task 30: Sample Task Description	High	29-01-2025 14:00	1 hours	Review	Task_ID 29	130	Pending	1	task sample task description	0	0	3	0.1	1	1	0.63	5	3	60	Emp_C
+31	Task 31: Sample Task Description	Medium	29-01-2025 15:00	2 hours	Meeting	Task_ID 30	131	In Progress	2	task sample task description	0	0	2	0.2	0.666666667	1	0.593333333	5	1	120	Emp_C
+32	Task 32: Sample Task Description	Low	29-01-2025 16:00	3 hours	Planning	Task_ID 31	132	Completed	3	task sample task description	0	0	1	0.3	0.333333333	1	0.556666667	5	2	180	Emp_B
+33	Task 33: Sample Task Description	High	29-01-2025 17:00	4 hours	Analysis	Task_ID 32	133	Pending	4	task sample task description	0	0	3	0.4	1	1	0.72	5	0	240	Emp_C
+34	Task 34: Sample Task Description	Medium	29-01-2025 18:00	5 hours	Review	Task_ID 33	134	In Progress	5	task sample task description	0	0	2	0.5	0.666666667	1	0.683333333	5	3	300	Emp_A
+35	Task 35: Sample Task Description	Low	29-01-2025 19:00	1 hours	Meeting	Task_ID 34	135	Completed	6	task sample task description	0	0	1	0.6	0.333333333	1	0.646666667	5	1	60	Emp_B
+36	Task 36: Sample Task Description	High	29-01-2025 20:00	2 hours	Planning	Task_ID 35	136	Pending	7	task sample task description	0	0	3	0.7	1	1	0.81	5	2	120	Emp_B
+37	Task 37: Sample Task Description	Medium	29-01-2025 21:00	3 hours	Analysis	Task_ID 36	137	In Progress	8	task sample task description	0	0	2	0.8	0.666666667	1	0.773333333	5	0	180	Emp_C
+38	Task 38: Sample Task Description	Low	29-01-2025 22:00	4 hours	Review	Task_ID 37	138	Completed	9	task sample task description	0	0	1	0.9	0.333333333	1	0.736666667	5	3	240	Emp_B
+39	Task 39: Sample Task Description	High	29-01-2025 23:00	5 hours	Meeting	Task_ID 38	139	Pending	10	task sample task description	0	0	3	1	1	1	0.9	5	1	300	Emp_A
+40	Task 40: Sample Task Description	Medium	30-01-2025 00:00	1 hours	Planning	Task_ID 39	140	In Progress	1	task sample task description	0	0	2	0.1	0.666666667	1	0.563333333	5	2	60	Emp_C
+41	Task 41: Sample Task Description	Low	30-01-2025 01:00	2 hours	Analysis	Task_ID 40	141	Completed	2	task sample task description	0	0	1	0.2	0.333333333	1	0.526666667	5	0	120	Emp_C
+42	Task 42: Sample Task Description	High	30-01-2025 02:00	3 hours	Review	Task_ID 41	142	Pending	3	task sample task description	0	0	3	0.3	1	1	0.69	5	3	180	Emp_B
+43	Task 43: Sample Task Description	Medium	30-01-2025 03:00	4 hours	Meeting	Task_ID 42	143	In Progress	4	task sample task description	0	0	2	0.4	0.666666667	1	0.653333333	5	1	240	Emp_C
+44	Task 44: Sample Task Description	Low	30-01-2025 04:00	5 hours	Planning	Task_ID 43	144	Completed	5	task sample task description	0	0	1	0.5	0.333333333	1	0.616666667	5	2	300	Emp_A
+45	Task 45: Sample Task Description	High	30-01-2025 05:00	1 hours	Analysis	Task_ID 44	145	Pending	6	task sample task description	0	0	3	0.6	1	1	0.78	5	0	60	Emp_B
+46	Task 46: Sample Task Description	Medium	30-01-2025 06:00	2 hours	Review	Task_ID 45	146	In Progress	7	task sample task description	0	0	2	0.7	0.666666667	1	0.743333333	5	3	120	Emp_B
+47	Task 47: Sample Task Description	Low	30-01-2025 07:00	3 hours	Meeting	Task_ID 46	147	Completed	8	task sample task description	0	0	1	0.8	0.333333333	1	0.706666667	5	1	180	Emp_C
+48	Task 48: Sample Task Description	High	30-01-2025 08:00	4 hours	Planning	Task_ID 47	148	Pending	9	task sample task description	0	0	3	0.9	1	1	0.87	5	2	240	Emp_B
+49	Task 49: Sample Task Description	Medium	30-01-2025 09:00	5 hours	Analysis	Task_ID 48	149	In Progress	10	task sample task description	0	0	2	1	0.666666667	1	0.833333333	5	0	300	Emp_A
+50	Task 50: Sample Task Description	Low	30-01-2025 10:00	1 hours	Review	Task_ID 49	150	Completed	1	task sample task description	0	0	1	0.1	0.333333333	1	0.496666667	5	3	60	Emp_C
+51	Task 51: Sample Task Description	High	30-01-2025 11:00	2 hours	Meeting	Task_ID 50	151	Pending	2	task sample task description	0	0	3	0.2	1	1	0.66	5	1	120	Emp_C
+52	Task 52: Sample Task Description	Medium	30-01-2025 12:00	3 hours	Planning	Task_ID 51	152	In Progress	3	task sample task description	0	0	2	0.3	0.666666667	1	0.623333333	5	2	180	Emp_B
+53	Task 53: Sample Task Description	Low	30-01-2025 13:00	4 hours	Analysis	Task_ID 52	153	Completed	4	task sample task description	0	0	1	0.4	0.333333333	1	0.586666667	5	0	240	Emp_C
+54	Task 54: Sample Task Description	High	30-01-2025 14:00	5 hours	Review	Task_ID 53	154	Pending	5	task sample task description	0	0	3	0.5	1	1	0.75	5	3	300	Emp_A
+55	Task 55: Sample Task Description	Medium	30-01-2025 15:00	1 hours	Meeting	Task_ID 54	155	In Progress	6	task sample task description	0	0	2	0.6	0.666666667	1	0.713333333	5	1	60	Emp_B
+56	Task 56: Sample Task Description	Low	30-01-2025 16:00	2 hours	Planning	Task_ID 55	156	Completed	7	task sample task description	0	0	1	0.7	0.333333333	1	0.676666667	5	2	120	Emp_B
+57	Task 57: Sample Task Description	High	30-01-2025 17:00	3 hours	Analysis	Task_ID 56	157	Pending	8	task sample task description	0	0	3	0.8	1	1	0.84	5	0	180	Emp_C
+58	Task 58: Sample Task Description	Medium	30-01-2025 18:00	4 hours	Review	Task_ID 57	158	In Progress	9	task sample task description	0	0	2	0.9	0.666666667	1	0.803333333	5	3	240	Emp_B
+59	Task 59: Sample Task Description	Low	30-01-2025 19:00	5 hours	Meeting	Task_ID 58	159	Completed	10	task sample task description	0	0	1	1	0.333333333	1	0.766666667	5	1	300	Emp_A
+60	Task 60: Sample Task Description	High	30-01-2025 20:00	1 hours	Planning	Task_ID 59	160	Pending	1	task sample task description	0	0	3	0.1	1	1	0.63	5	2	60	Emp_C
+61	Task 61: Sample Task Description	Medium	30-01-2025 21:00	2 hours	Analysis	Task_ID 60	161	In Progress	2	task sample task description	0	0	2	0.2	0.666666667	1	0.593333333	5	0	120	Emp_C
+62	Task 62: Sample Task Description	Low	30-01-2025 22:00	3 hours	Review	Task_ID 61	162	Completed	3	task sample task description	0	0	1	0.3	0.333333333	1	0.556666667	5	3	180	Emp_B
+63	Task 63: Sample Task Description	High	30-01-2025 23:00	4 hours	Meeting	Task_ID 62	163	Pending	4	task sample task description	0	0	3	0.4	1	1	0.72	5	1	240	Emp_C
+64	Task 64: Sample Task Description	Medium	31-01-2025 00:00	5 hours	Planning	Task_ID 63	164	In Progress	5	task sample task description	0	0	2	0.5	0.666666667	1	0.683333333	5	2	300	Emp_A
+65	Task 65: Sample Task Description	Low	31-01-2025 01:00	1 hours	Analysis	Task_ID 64	165	Completed	6	task sample task description	0	0	1	0.6	0.333333333	1	0.646666667	5	0	60	Emp_B
+66	Task 66: Sample Task Description	High	31-01-2025 02:00	2 hours	Review	Task_ID 65	166	Pending	7	task sample task description	0	0	3	0.7	1	1	0.81	5	3	120	Emp_B
+67	Task 67: Sample Task Description	Medium	31-01-2025 03:00	3 hours	Meeting	Task_ID 66	167	In Progress	8	task sample task description	0	0	2	0.8	0.666666667	1	0.773333333	5	1	180	Emp_C
+68	Task 68: Sample Task Description	Low	31-01-2025 04:00	4 hours	Planning	Task_ID 67	168	Completed	9	task sample task description	0	0	1	0.9	0.333333333	1	0.736666667	5	2	240	Emp_B
+69	Task 69: Sample Task Description	High	31-01-2025 05:00	5 hours	Analysis	Task_ID 68	169	Pending	10	task sample task description	0	0	3	1	1	1	0.9	5	0	300	Emp_A
+70	Task 70: Sample Task Description	Medium	31-01-2025 06:00	1 hours	Review	Task_ID 69	170	In Progress	1	task sample task description	0	0	2	0.1	0.666666667	1	0.563333333	5	3	60	Emp_C
+71	Task 71: Sample Task Description	Low	31-01-2025 07:00	2 hours	Meeting	Task_ID 70	171	Completed	2	task sample task description	0	0	1	0.2	0.333333333	1	0.526666667	5	1	120	Emp_C
+72	Task 72: Sample Task Description	High	31-01-2025 08:00	3 hours	Planning	Task_ID 71	172	Pending	3	task sample task description	0	0	3	0.3	1	1	0.69	5	2	180	Emp_B
+73	Task 73: Sample Task Description	Medium	31-01-2025 09:00	4 hours	Analysis	Task_ID 72	173	In Progress	4	task sample task description	0	0	2	0.4	0.666666667	1	0.653333333	5	0	240	Emp_C
+74	Task 74: Sample Task Description	Low	31-01-2025 10:00	5 hours	Review	Task_ID 73	174	Completed	5	task sample task description	0	0	1	0.5	0.333333333	1	0.616666667	5	3	300	Emp_A
+75	Task 75: Sample Task Description	High	31-01-2025 11:00	1 hours	Meeting	Task_ID 74	175	Pending	6	task sample task description	0	0	3	0.6	1	1	0.78	5	1	60	Emp_B
+76	Task 76: Sample Task Description	Medium	31-01-2025 12:00	2 hours	Planning	Task_ID 75	176	In Progress	7	task sample task description	0	0	2	0.7	0.666666667	1	0.743333333	5	2	120	Emp_B
+77	Task 77: Sample Task Description	Low	31-01-2025 13:00	3 hours	Analysis	Task_ID 76	177	Completed	8	task sample task description	0	0	1	0.8	0.333333333	1	0.706666667	5	0	180	Emp_C
+78	Task 78: Sample Task Description	High	31-01-2025 14:00	4 hours	Review	Task_ID 77	178	Pending	9	task sample task description	0	0	3	0.9	1	1	0.87	5	3	240	Emp_B
+79	Task 79: Sample Task Description	Medium	31-01-2025 15:00	5 hours	Meeting	Task_ID 78	179	In Progress	10	task sample task description	0	0	2	1	0.666666667	1	0.833333333	5	1	300	Emp_A
+80	Task 80: Sample Task Description	Low	31-01-2025 16:00	1 hours	Planning	Task_ID 79	180	Completed	1	task sample task description	0	0	1	0.1	0.333333333	1	0.496666667	5	2	60	Emp_C
+81	Task 81: Sample Task Description	High	31-01-2025 17:00	2 hours	Analysis	Task_ID 80	181	Pending	2	task sample task description	0	0	3	0.2	1	1	0.66	5	0	120	Emp_C
+82	Task 82: Sample Task Description	Medium	31-01-2025 18:00	3 hours	Review	Task_ID 81	182	In Progress	3	task sample task description	0	0	2	0.3	0.666666667	1	0.623333333	5	3	180	Emp_B
+83	Task 83: Sample Task Description	Low	31-01-2025 19:00	4 hours	Meeting	Task_ID 82	183	Completed	4	task sample task description	0	0	1	0.4	0.333333333	1	0.586666667	5	1	240	Emp_C
+84	Task 84: Sample Task Description	High	31-01-2025 20:00	5 hours	Planning	Task_ID 83	184	Pending	5	task sample task description	0	0	3	0.5	1	1	0.75	5	2	300	Emp_A
+85	Task 85: Sample Task Description	Medium	31-01-2025 21:00	1 hours	Analysis	Task_ID 84	185	In Progress	6	task sample task description	0	0	2	0.6	0.666666667	1	0.713333333	5	0	60	Emp_B
+86	Task 86: Sample Task Description	Low	31-01-2025 22:00	2 hours	Review	Task_ID 85	186	Completed	7	task sample task description	0	0	1	0.7	0.333333333	1	0.676666667	5	3	120	Emp_B
+87	Task 87: Sample Task Description	High	31-01-2025 23:00	3 hours	Meeting	Task_ID 86	187	Pending	8	task sample task description	0	0	3	0.8	1	1	0.84	5	1	180	Emp_C
+88	Task 88: Sample Task Description	Medium	01-02-2025 00:00	4 hours	Planning	Task_ID 87	188	In Progress	9	task sample task description	0	0	2	0.9	0.666666667	1	0.803333333	5	2	240	Emp_B
+89	Task 89: Sample Task Description	Low	01-02-2025 01:00	5 hours	Analysis	Task_ID 88	189	Completed	10	task sample task description	0	0	1	1	0.333333333	1	0.766666667	5	0	300	Emp_A
+90	Task 90: Sample Task Description	High	01-02-2025 02:00	1 hours	Review	Task_ID 89	190	Pending	1	task sample task description	0	0	3	0.1	1	1	0.63	5	3	60	Emp_C
+91	Task 91: Sample Task Description	Medium	01-02-2025 03:00	2 hours	Meeting	Task_ID 90	191	In Progress	2	task sample task description	0	0	2	0.2	0.666666667	1	0.593333333	5	1	120	Emp_C
+92	Task 92: Sample Task Description	Low	01-02-2025 04:00	3 hours	Planning	Task_ID 91	192	Completed	3	task sample task description	0	0	1	0.3	0.333333333	1	0.556666667	5	2	180	Emp_B
+93	Task 93: Sample Task Description	High	01-02-2025 05:00	4 hours	Analysis	Task_ID 92	193	Pending	4	task sample task description	0	0	3	0.4	1	1	0.72	5	0	240	Emp_C
+94	Task 94: Sample Task Description	Medium	01-02-2025 06:00	5 hours	Review	Task_ID 93	194	In Progress	5	task sample task description	0	0	2	0.5	0.666666667	1	0.683333333	5	3	300	Emp_A
+95	Task 95: Sample Task Description	Low	01-02-2025 07:00	1 hours	Meeting	Task_ID 94	195	Completed	6	task sample task description	0	0	1	0.6	0.333333333	1	0.646666667	5	1	60	Emp_B
+96	Task 96: Sample Task Description	High	01-02-2025 08:00	2 hours	Planning	Task_ID 95	196	Pending	7	task sample task description	0	0	3	0.7	1	1	0.81	5	2	120	Emp_B
+97	Task 97: Sample Task Description	Medium	01-02-2025 09:00	3 hours	Analysis	Task_ID 96	197	In Progress	8	task sample task description	0	0	2	0.8	0.666666667	1	0.773333333	5	0	180	Emp_C
+98	Task 98: Sample Task Description	Low	01-02-2025 10:00	4 hours	Review	Task_ID 97	198	Completed	9	task sample task description	0	0	1	0.9	0.333333333	1	0.736666667	5	3	240	Emp_B
+99	Task 99: Sample Task Description	High	01-02-2025 11:00	5 hours	Meeting	Task_ID 98	199	Pending	10	task sample task description	0	0	3	1	1	1	0.9	5	1	300	Emp_A
+100	Task 100: Sample Task Description	Medium	01-02-2025 12:00	1 hours	Planning	Task_ID 99	200	In Progress	1	task sample task description	0	0	2	0.1	0.666666667	1	0.563333333	5	2	60	Emp_C
