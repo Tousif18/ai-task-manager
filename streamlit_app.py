@@ -17,9 +17,24 @@ else:
     task_data = pd.read_csv("tasks_data.csv")
 
 
-employees = ['Emp_A', 'Emp_B', 'Emp_C']
+# Optional: set app metadata (optional but good UX)
+st.set_page_config(page_title="AI Task Manager", layout="centered")
 
+# 👥 Dynamic Employee Management in Sidebar
+st.sidebar.header("👥 Employee Management")
+
+default_employees = ["Emp_A", "Emp_B", "Emp_C"]
+custom_employees = st.sidebar.text_area(
+    "Enter employee names (comma-separated)", 
+    value=", ".join(default_employees)
+)
+
+# Final employee list used across the app
+employees = [e.strip() for e in custom_employees.split(",") if e.strip()]
+
+# App title
 st.title("🧠 AI-Powered Task Management System")
+
 
 # Sidebar Navigation
 page = st.sidebar.radio("📂 Navigate", ["🔍 Predict Task", "📊 Dashboard"])
