@@ -88,9 +88,9 @@ if page == "Predict Task":
         index=list(allowed_types).index(suggested_type)
     )
     
-        urgency = st.slider("Urgency Score", 1, 10, 5)
-        deadline = st.date_input("Deadline", min_value=datetime.today())
-        submitted = st.form_submit_button("Predict & Assign")
+      urgency = st.slider("Urgency Score", 1, 10, 5)
+      deadline = st.date_input("Deadline", min_value=datetime.today())
+      submitted = st.form_submit_button("Predict & Assign")
 
     if submitted:
         task_length = len(task_name.split())
