@@ -9,7 +9,7 @@ import re
 import os
 if os.path.exists("task_log.csv"):
     os.remove("task_log.csv")
-    st.warning("🧹 Old task_log.csv deleted — submit a new task to regenerate it.")
+    st.warning("Old task_log.csv deleted — submit a new task to regenerate it.")
 
 def recommend_task_type(task_name, allowed_types):
     task_name = re.sub(r'[^a-zA-Z\s]', '', task_name.lower())
@@ -47,8 +47,8 @@ else:
 # Optional: set app metadata (optional but good UX)
 st.set_page_config(page_title="AI Task Manager", layout="centered")
 
-# 👥 Dynamic Employee Management in Sidebar
-st.sidebar.header("👥 Employee Management")
+#  Dynamic Employee Management in Sidebar
+st.sidebar.header("Employee Management")
 
 default_employees = ["Emp_A", "Emp_B", "Emp_C"]
 custom_employees = st.sidebar.text_area(
@@ -60,14 +60,14 @@ custom_employees = st.sidebar.text_area(
 employees = [e.strip() for e in custom_employees.split(",") if e.strip()]
 
 # App title
-st.title("🧠 AI-Powered Task Management System")
+st.title("AI-Powered Task Management System")
 
 
 # Sidebar Navigation
-page = st.sidebar.radio("📂 Navigate", ["🔍 Predict Task", "📊 Dashboard"])
+page = st.sidebar.radio("Navigate", ["Predict Task", "Dashboard"])
 
-if page == "🔍 Predict Task":
-    st.header("🔮 Predict Task Priority and Assign Employee")
+if page == "Predict Task":
+    st.header("Predict Task Priority and Assign Employee")
 
     with st.form("task_form"):
         task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
@@ -75,7 +75,7 @@ if page == "🔍 Predict Task":
 
         if task_name.strip():
           suggested_type = recommend_task_type(task_name, allowed_task_types)
-          st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
+          st.caption(f"Suggested Task Type: **{suggested_type}**")
         else:
           suggested_type = allowed_task_types[0]
 
@@ -89,7 +89,7 @@ if page == "🔍 Predict Task":
 
         urgency = st.slider("Urgency Score", 1, 10, 5)
         deadline = st.date_input("Deadline", min_value=datetime.today())
-        submitted = st.form_submit_button("📌 Predict & Assign")
+        submitted = st.form_submit_button("Predict & Assign")
 
     if submitted:
         task_length = len(task_name.split())
@@ -109,13 +109,13 @@ if page == "🔍 Predict Task":
         confidence = priority_model.predict_proba(X_input).max()
         # TODO: Add SHAP-based interpretability later
 
-        st.success(f"✅ Predicted Priority: **{predicted_priority}**")
-        st.caption(f"🤖 Model confidence: {confidence:.2%}")
+        st.success(f"Predicted Priority: **{predicted_priority}**")
+        st.caption(f"Model confidence: {confidence:.2%}")
         workload = task_data['Assigned_Employee'].value_counts().to_dict()
         workload = {emp: workload.get(emp, 0) for emp in employees}
         assigned_employee = min(workload, key=workload.get)
 
-        st.info(f"👤 Assigned to: **{assigned_employee}**")
+        st.info(f"Assigned to: **{assigned_employee}**")
         new_task = {
             'Task_Name': task_name,
             'Estimated_Time_Minutes': estimated_time,
@@ -135,15 +135,15 @@ if page == "🔍 Predict Task":
         else:
            new_df.to_csv("task_log.csv", index=False)
 
-elif page == "📊 Dashboard":
-    st.header("📊 Task Assignment Dashboard")
+elif page == "Dashboard":
+    st.header("Task Assignment Dashboard")
 
-    st.subheader("📌 Tasks per Employee")
+    st.subheader("Tasks per Employee")
     st.bar_chart(task_data['Assigned_Employee'].value_counts())
 
-    st.subheader("📈 Priority Distribution")
+    st.subheader("Priority Distribution")
     st.bar_chart(task_data['Priority'].value_counts())
-    st.subheader("🗓️ Task Timeline View")
+    st.subheader("Task Timeline View")
 
     # Only show if necessary columns exist
     if 'Deadline' in task_data.columns and 'Task_Name' in task_data.columns:
@@ -169,12 +169,12 @@ elif page == "📊 Dashboard":
     else:
         st.warning("Task data is missing 'Deadline' or 'Task_Name' columns.")
 
-    st.subheader("🧪 Urgency vs Priority Score")
+    st.subheader("Urgency vs Priority Score")
     if 'Urgency_Score' in task_data.columns and 'Priority_Score' in task_data.columns:
         st.scatter_chart(task_data[['Urgency_Score', 'Priority_Score']])
     else:
         st.warning("Priority_Score not available for scatter plot.")
-    st.subheader("⬇️ Export Assigned Tasks")
+    st.subheader("Export Assigned Tasks")
     st.download_button(
        label="Download as CSV",
        data=task_data.to_csv(index=False),
