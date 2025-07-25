@@ -113,8 +113,8 @@ if page == "🔍 Predict Task":
         explainer = shap.Explainer(priority_model, X_input)
         shap_values = explainer(X_input)
 
-        # Extract feature impacts
-        shap_vals = shap_values.values[0]
+        # Flatten to 1D array
+        shap_vals = shap_values.values[0].flatten()
         feature_names = X_input.columns
         feature_impacts = pd.Series(shap_vals, index=feature_names).sort_values()
 
@@ -125,6 +125,7 @@ if page == "🔍 Predict Task":
         fig, ax = plt.subplots(figsize=(8, 4))
         feature_impacts.plot(kind='barh', ax=ax)
         st.pyplot(fig)
+
 
 
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
