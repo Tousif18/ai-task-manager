@@ -109,17 +109,23 @@ if page == "🔍 Predict Task":
 
         predicted_priority = priority_model.predict(X_input)[0]
         confidence = priority_model.predict_proba(X_input).max()
-        # SHAP Explanation
+        # SHAP Explanation (manual bar chart for Streamlit)
         explainer = shap.Explainer(priority_model, X_input)
-        shap_values_for_task = explainer(X_input)
+        shap_values = explainer(X_input)
 
-        st.subheader("🔍 Feature Impact (SHAP Explanation)")
-        st.caption("This shows how each input feature influenced the priority prediction.")
+        # Extract feature impacts
+        shap_vals = shap_values.values[0]
+        feature_names = X_input.columns
+        feature_impacts = pd.Series(shap_vals, index=feature_names).sort_values()
 
-        # Visualize SHAP values
-        plt.figure(figsize=(8, 4))
-        shap.plots.bar(shap_values_for_task[0], show=False)
-        st.pyplot(plt)
+        st.subheader("🔍 Feature Impact on Prediction")
+        st.caption("How each input feature influenced the model's predicted priority.")
+
+        # Plot using matplotlib
+        fig, ax = plt.subplots(figsize=(8, 4))
+        feature_impacts.plot(kind='barh', ax=ax)
+        st.pyplot(fig)
+
 
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
         st.caption(f"🤖 Model confidence: {confidence:.2%}")
