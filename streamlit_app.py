@@ -5,11 +5,6 @@ from datetime import datetime
 import plotly.express as px
 
 import re
-# TEMP: Delete broken task_log.csv if it exists
-import os
-if os.path.exists("task_log.csv"):
-    os.remove("task_log.csv")
-    st.warning("Old task_log.csv deleted — submit a new task to regenerate it.")
 
 def recommend_task_type(task_name, allowed_types):
     task_name = re.sub(r'[^a-zA-Z\s]', '', task_name.lower())
@@ -30,6 +25,7 @@ def recommend_task_type(task_name, allowed_types):
 
     return allowed_types[0]  # fallback (usually "Analysis")
 
+
 # Load the original task type options from the template file
 template_df = pd.read_csv("tasks_data.csv")
 
@@ -47,7 +43,7 @@ else:
 # Optional: set app metadata (optional but good UX)
 st.set_page_config(page_title="AI Task Manager", layout="centered")
 
-#  Dynamic Employee Management in Sidebar
+# Dynamic Employee Management in Sidebar
 st.sidebar.header("Employee Management")
 
 default_employees = ["Emp_A", "Emp_B", "Emp_C"]
@@ -74,17 +70,18 @@ if page == "Predict Task":
         allowed_task_types = template_df['Task_Type'].unique()
 
         if task_name.strip():
-            suggested_type = recommend_task_type(task_name, allowed_task_types)
-            st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
+          suggested_type = recommend_task_type(task_name, allowed_task_types)
+          st.caption(f"Suggested Task Type: **{suggested_type}**")
         else:
-            suggested_type = allowed_task_types[0]
+          suggested_type = allowed_task_types[0]
 
+        estimated_time = st.slider("Estimated Time (in minutes)", 15, 480, 60)
         task_type = st.selectbox(
-            "Task Type",
-            allowed_task_types,
-            index=list(allowed_task_types).index(suggested_type)
+        "Task Type", 
+        allowed_task_types, 
+        index=list(allowed_task_types).index(suggested_type)
+        if suggested_type in allowed_task_types else 0
         )
-
         urgency = st.slider("Urgency Score", 1, 10, 5)
         deadline = st.date_input("Deadline", min_value=datetime.today())
         submitted = st.form_submit_button("Predict & Assign")
@@ -105,7 +102,6 @@ if page == "Predict Task":
 
         predicted_priority = priority_model.predict(X_input)[0]
         confidence = priority_model.predict_proba(X_input).max()
-        # TODO: Add SHAP-based interpretability later
 
         st.success(f"Predicted Priority: **{predicted_priority}**")
         st.caption(f"Model confidence: {confidence:.2%}")
@@ -115,23 +111,24 @@ if page == "Predict Task":
 
         st.info(f"Assigned to: **{assigned_employee}**")
         new_task = {
-            'Task_Name': task_name,
-            'Estimated_Time_Minutes': estimated_time,
-            'Urgency_Score': urgency,
-            'Days_Left': days_left,
-            'Deadline': deadline.strftime("%Y-%m-%d"),
-            'Task_Type': task_type,
-            'Priority': predicted_priority,
-            'Assigned_Employee': assigned_employee
+           'Task_Name': task_name,
+           'Estimated_Time_Minutes': estimated_time,
+           'Urgency_Score': urgency,
+           'Days_Left': days_left,
+           'Deadline': deadline.strftime("%Y-%m-%d"),
+           'Task_Type': task_type,
+           'Priority': predicted_priority,
+           'Assigned_Employee': assigned_employee
         }
 
 
         # Convert to DataFrame and append to CSV
         new_df = pd.DataFrame([new_task])
         if os.path.exists("task_log.csv"):
-           new_df.to_csv("task_log.csv", mode='a', header=False, index=False)
+          new_df.to_csv("task_log.csv", mode='a', header=False, index=False)
         else:
-           new_df.to_csv("task_log.csv", index=False)
+          new_df.to_csv("task_log.csv", index=False)
+
 
 elif page == "Dashboard":
     st.header("Task Assignment Dashboard")
@@ -167,6 +164,7 @@ elif page == "Dashboard":
     else:
         st.warning("Task data is missing 'Deadline' or 'Task_Name' columns.")
 
+
     st.subheader("Urgency vs Priority Score")
     if 'Urgency_Score' in task_data.columns and 'Priority_Score' in task_data.columns:
         st.scatter_chart(task_data[['Urgency_Score', 'Priority_Score']])
@@ -174,8 +172,8 @@ elif page == "Dashboard":
         st.warning("Priority_Score not available for scatter plot.")
     st.subheader("Export Assigned Tasks")
     st.download_button(
-       label="Download as CSV",
-       data=task_data.to_csv(index=False),
-       file_name='assigned_tasks.csv',
-       mime='text/csv'
+        label="Download as CSV",
+        data=task_data.to_csv(index=False),
+        file_name='assigned_tasks.csv',
+        mime='text/csv'
     )
