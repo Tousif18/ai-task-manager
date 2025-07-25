@@ -115,10 +115,12 @@ if page == "🔍 Predict Task":
             'Estimated_Time_Minutes': estimated_time,
             'Urgency_Score': urgency,
             'Days_Left': days_left,
+            'Deadline': deadline.strftime("%Y-%m-%d"),
             'Task_Type': task_type,
             'Priority': predicted_priority,
             'Assigned_Employee': assigned_employee
         }
+
 
         # Convert to DataFrame and append to CSV
         new_df = pd.DataFrame([new_task])
