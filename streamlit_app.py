@@ -3,8 +3,6 @@ import pandas as pd
 import joblib
 from datetime import datetime
 import plotly.express as px
-import shap
-import matplotlib.pyplot as plt
 
 import re
 # TEMP: Delete broken task_log.csv if it exists
@@ -109,24 +107,7 @@ if page == "🔍 Predict Task":
 
         predicted_priority = priority_model.predict(X_input)[0]
         confidence = priority_model.predict_proba(X_input).max()
-        # SHAP Explanation (manual bar chart for Streamlit)
-        explainer = shap.Explainer(priority_model, X_input)
-        shap_values = explainer(X_input)
-
-        # Flatten to 1D array
-        shap_vals = shap_values.values[0].flatten()
-        feature_names = X_input.columns
-        feature_impacts = pd.Series(shap_vals, index=feature_names).sort_values()
-
-        st.subheader("🔍 Feature Impact on Prediction")
-        st.caption("How each input feature influenced the model's predicted priority.")
-
-        # Plot using matplotlib
-        fig, ax = plt.subplots(figsize=(8, 4))
-        feature_impacts.plot(kind='barh', ax=ax)
-        st.pyplot(fig)
-
-
+        # TODO: Add SHAP-based interpretability later
 
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
         st.caption(f"🤖 Model confidence: {confidence:.2%}")
