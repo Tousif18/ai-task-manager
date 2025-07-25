@@ -5,6 +5,11 @@ from datetime import datetime
 import plotly.express as px
 
 import re
+# TEMP: Delete broken task_log.csv if it exists
+import os
+if os.path.exists("task_log.csv"):
+    os.remove("task_log.csv")
+    st.warning("🧹 Old task_log.csv deleted — submit a new task to regenerate it.")
 
 def recommend_task_type(task_name, allowed_types):
     task_name = re.sub(r'[^a-zA-Z\s]', '', task_name.lower())
