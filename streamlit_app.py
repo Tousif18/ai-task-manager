@@ -2,24 +2,26 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
-def recommend_task_type(task_name):
-    task_name = task_name.lower()
+import re
+
+def recommend_task_type(task_name, allowed_types):
+    task_name = re.sub(r'[^a-zA-Z\s]', '', task_name.lower())
 
     keyword_map = {
-        "analysis": ["analyze", "analysis", "assess", "evaluate"],
-        "design": ["design", "mockup", "layout", "wireframe"],
-        "development": ["build", "develop", "code", "implement"],
-        "testing": ["test", "debug", "qa", "verify"],
-        "research": ["research", "study", "explore", "read"],
-        "documentation": ["write", "doc", "document", "manual"],
+        "analysis": ["analyze", "assessment", "research", "report", "investigate"],
+        "meeting": ["meet", "meeting", "call", "discussion", "zoom", "sync"],
+        "planning": ["plan", "planning", "schedule", "roadmap", "organize"],
+        "review": ["review", "feedback", "evaluate", "check", "approve"]
     }
 
     for task_type, keywords in keyword_map.items():
         for keyword in keywords:
             if keyword in task_name:
-                return task_type.capitalize()
+                formatted = task_type.capitalize()
+                if formatted in allowed_types:
+                    return formatted
 
-    return "Analysis"  # fallback
+    return allowed_types[0]  # fallback (usually "Analysis")
 
 # Load the original task type options from the template file
 template_df = pd.read_csv("tasks_data.csv")
@@ -62,18 +64,20 @@ if page == "🔍 Predict Task":
 
     with st.form("task_form"):
         task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
+        allowed_task_types = template_df['Task_Type'].unique()
+
         if task_name.strip():
-            suggested_type = recommend_task_type(task_name)
-            st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
+          suggested_type = recommend_task_type(task_name, allowed_task_types)
+          st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
         else:
-            suggested_type = "Analysis"
+          suggested_type = allowed_task_types[0]
 
         estimated_time = st.slider("Estimated Time (in minutes)", 15, 480, 60)
         task_type = st.selectbox(
-             "Task Type", 
-              template_df['Task_Type'].unique(), 
-              index=list(template_df['Task_Type'].unique()).index(suggested_type) 
-              if suggested_type in template_df['Task_Type'].unique() else 0
+          "Task Type", 
+           allowed_task_types, 
+           index=list(allowed_task_types).index(suggested_type)
+           if suggested_type in allowed_task_types else 0
         )
 
         urgency = st.slider("Urgency Score", 1, 10, 5)
