@@ -70,19 +70,19 @@ if page == "Predict Task":
     st.header("Predict Task Priority and Assign Employee")
 
     with st.form("task_form"):
-    task_name = st.text_input("Task Name")
+      task_name = st.text_input("Task Name")
     
-    # If empty, stop and prompt
-    if not task_name.strip():
-        st.error("Please enter a Task Name so we can suggest a type.")
-        st.form_submit_button("Predict", disabled=True)
-        st.stop()
+      # If empty, stop and prompt
+      if not task_name.strip():
+         st.error("Please enter a Task Name so we can suggest a type.")
+         st.form_submit_button("Predict", disabled=True)
+         st.stop()
     
-    # Once we have text, compute suggestion
-    suggested_type = recommend_task_type(task_name, allowed_types)
-    st.caption(f"💡 Suggested Task Type: {suggested_type}")
+      # Once we have text, compute suggestion
+      suggested_type = recommend_task_type(task_name, allowed_types)
+      st.caption(f"💡 Suggested Task Type: {suggested_type}")
     
-    task_type = st.selectbox(
+      task_type = st.selectbox(
         "Task Type",
         allowed_types,
         index=list(allowed_types).index(suggested_type)
