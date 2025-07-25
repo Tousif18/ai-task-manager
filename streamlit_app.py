@@ -70,23 +70,24 @@ if page == "Predict Task":
     st.header("Predict Task Priority and Assign Employee")
 
     with st.form("task_form"):
-        task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
-        allowed_task_types = template_df['Task_Type'].unique()
-
-        if task_name.strip():
-          suggested_type = recommend_task_type(task_name, allowed_task_types)
-          st.caption(f"Suggested Task Type: **{suggested_type}**")
-        else:
-          suggested_type = allowed_task_types[0]
-
-        estimated_time = st.slider("Estimated Time (in minutes)", 15, 480, 60)
-        task_type = st.selectbox(
-          "Task Type", 
-           allowed_task_types, 
-           index=list(allowed_task_types).index(suggested_type)
-           if suggested_type in allowed_task_types else 0
-        )
-
+    task_name = st.text_input("Task Name")
+    
+    # If empty, stop and prompt
+    if not task_name.strip():
+        st.error("Please enter a Task Name so we can suggest a type.")
+        st.form_submit_button("Predict", disabled=True)
+        st.stop()
+    
+    # Once we have text, compute suggestion
+    suggested_type = recommend_task_type(task_name, allowed_types)
+    st.caption(f"💡 Suggested Task Type: {suggested_type}")
+    
+    task_type = st.selectbox(
+        "Task Type",
+        allowed_types,
+        index=list(allowed_types).index(suggested_type)
+    )
+    
         urgency = st.slider("Urgency Score", 1, 10, 5)
         deadline = st.date_input("Deadline", min_value=datetime.today())
         submitted = st.form_submit_button("Predict & Assign")
