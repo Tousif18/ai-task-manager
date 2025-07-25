@@ -148,16 +148,23 @@ elif page == "📊 Dashboard":
     if 'Deadline' in task_data.columns and 'Task_Name' in task_data.columns:
         task_data['Deadline'] = pd.to_datetime(task_data['Deadline'], errors='coerce')
 
-        fig = px.timeline(
-            task_data,
-            x_start="Deadline",
-            x_end="Deadline",
-            y="Task_Name",
-            color="Priority",
-            title="Tasks by Deadline",
-            labels={"Task_Name": "Task", "Deadline": "Deadline"},
-            height=600
-        )
+    from datetime import datetime
+
+    # Use today as the start date for Gantt-style view
+    today_str = datetime.today().strftime("%Y-%m-%d")
+    task_data['Start_Date'] = today_str  # Same start for all tasks
+
+    fig = px.timeline(
+        task_data,
+        x_start="Start_Date",
+        x_end="Deadline",
+        y="Task_Name",
+        color="Priority",
+        title="Tasks from Today until Deadline",
+        labels={"Task_Name": "Task", "Deadline": "Deadline"},
+        height=600
+    )
+
         fig.update_yaxes(autorange="reversed")
         st.plotly_chart(fig, use_container_width=True)
     else:
