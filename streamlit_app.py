@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
+import plotly.express as px
+
 import re
 
 def recommend_task_type(task_name, allowed_types):
@@ -133,6 +135,26 @@ elif page == "📊 Dashboard":
 
     st.subheader("📈 Priority Distribution")
     st.bar_chart(task_data['Priority'].value_counts())
+    st.subheader("🗓️ Task Timeline View")
+
+    # Only show if necessary columns exist
+    if 'Deadline' in task_data.columns and 'Task_Name' in task_data.columns:
+        task_data['Deadline'] = pd.to_datetime(task_data['Deadline'], errors='coerce')
+
+        fig = px.timeline(
+            task_data,
+            x_start="Deadline",
+            x_end="Deadline",
+            y="Task_Name",
+            color="Priority",
+            title="Tasks by Deadline",
+            labels={"Task_Name": "Task", "Deadline": "Deadline"},
+            height=600
+        )
+        fig.update_yaxes(autorange="reversed")
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.warning("Task data is missing 'Deadline' or 'Task_Name' columns.")
 
     st.subheader("🧪 Urgency vs Priority Score")
     if 'Urgency_Score' in task_data.columns and 'Priority_Score' in task_data.columns:
