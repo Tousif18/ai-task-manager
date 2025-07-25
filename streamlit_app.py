@@ -70,17 +70,14 @@ if page == "Predict Task":
     st.header("Predict Task Priority and Assign Employee")
 
     with st.form("task_form"):
-      task_name = st.text_input("Task Name")
-    
-      # If empty, stop and prompt
-      if not task_name.strip():
-         st.error("Please enter a Task Name so we can suggest a type.")
-         st.form_submit_button("Predict", disabled=True)
-         st.stop()
-    
-      # Once we have text, compute suggestion
-      suggested_type = recommend_task_type(task_name, allowed_types)
-      st.caption(f"💡 Suggested Task Type: {suggested_type}")
+      task_name = st.text_input("Task Name", placeholder="e.g. Fix login bug")
+      allowed_task_types = template_df['Task_Type'].unique()
+
+      if task_name.strip():
+         suggested_type = recommend_task_type(task_name, allowed_task_types)
+         st.caption(f"💡 Suggested Task Type: **{suggested_type}**")
+      else:
+         suggested_type = allowed_task_types[0]
     
       task_type = st.selectbox(
         "Task Type",
