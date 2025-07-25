@@ -3,6 +3,8 @@ import pandas as pd
 import joblib
 from datetime import datetime
 import plotly.express as px
+import shap
+import matplotlib.pyplot as plt
 
 import re
 # TEMP: Delete broken task_log.csv if it exists
@@ -107,7 +109,19 @@ if page == "🔍 Predict Task":
 
         predicted_priority = priority_model.predict(X_input)[0]
         confidence = priority_model.predict_proba(X_input).max()
-        
+        # SHAP Explanation
+        explainer = shap.TreeExplainer(priority_model)
+        shap_values = explainer.shap_values(X_input)
+
+        # Visualize the explanation for the predicted class
+        st.subheader("🔍 Feature Impact (SHAP Explanation)")
+        st.caption("This shows how each input feature influenced the priority prediction.")
+
+        # Use matplotlib-based summary plot
+        plt.figure(figsize=(8, 4))
+        shap.bar_plot(shap_values[predicted_priority][0], feature_names=X_input.columns)
+        st.pyplot(plt)
+
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
         st.caption(f"🤖 Model confidence: {confidence:.2%}")
         workload = task_data['Assigned_Employee'].value_counts().to_dict()
