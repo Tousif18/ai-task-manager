@@ -110,16 +110,15 @@ if page == "🔍 Predict Task":
         predicted_priority = priority_model.predict(X_input)[0]
         confidence = priority_model.predict_proba(X_input).max()
         # SHAP Explanation
-        explainer = shap.TreeExplainer(priority_model)
-        shap_values = explainer.shap_values(X_input)
+        explainer = shap.Explainer(priority_model, X_input)
+        shap_values_for_task = explainer(X_input)
 
-        # Visualize the explanation for the predicted class
         st.subheader("🔍 Feature Impact (SHAP Explanation)")
         st.caption("This shows how each input feature influenced the priority prediction.")
 
-        # Use matplotlib-based summary plot
+        # Visualize SHAP values
         plt.figure(figsize=(8, 4))
-        shap.bar_plot(shap_values[predicted_priority][0], feature_names=X_input.columns)
+        shap.plots.bar(shap_values_for_task[0], show=False)
         st.pyplot(plt)
 
         st.success(f"✅ Predicted Priority: **{predicted_priority}**")
