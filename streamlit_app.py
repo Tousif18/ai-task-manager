@@ -56,7 +56,8 @@ custom_employees = st.sidebar.text_area(
 employees = [e.strip() for e in custom_employees.split(",") if e.strip()]
 
 # App title
-st.title("AI-Powered Task Management System")
+st.title("AI-Powered Task Manager")
+st.markdown("This app classifies tasks and predicts their priority level using ML & NLP.")
 
 
 # Sidebar Navigation
@@ -177,3 +178,6 @@ elif page == "Dashboard":
         file_name='assigned_tasks.csv',
         mime='text/csv'
     )
+st.sidebar.title("Connect")
+st.sidebar.markdown("[GitHub Repo](https://github.com/Tousif18/ai-task-manager)")
+st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/tousifazim)")
