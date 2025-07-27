@@ -99,7 +99,7 @@ Edit
 
 **Tousif Azim**  
 🎓 BSc Data Science @ GNIT Kolkata  
-📧 tousifazim@gmail.com  
+📧 tousifazim.ds@gmail.com  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/tousifazim)  
 💻 [GitHub](https://github.com/Tousif18)
 
