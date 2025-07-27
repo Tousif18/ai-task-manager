@@ -84,7 +84,8 @@ Edit
 
 ## 📈 Sample Output (Screenshot)
 
-> *[Insert a screenshot here from your confusion matrix or app UI]*
+![AI Task Manager App](./app_screenshot.png)
+
 
 ---
 
