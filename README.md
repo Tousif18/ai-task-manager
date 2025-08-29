@@ -1,4 +1,9 @@
 # 🧠 AI-Powered Task Management System
+![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red)
+![Machine Learning](https://img.shields.io/badge/ML-ScikitLearn-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Deployed-brightgreen)
 
 An intelligent task manager that leverages **Machine Learning** and **Natural Language Processing (NLP)** to classify tasks and predict their priority level — making task organization smarter and more efficient.
 
@@ -16,21 +21,43 @@ An intelligent task manager that leverages **Machine Learning** and **Natural La
 > - Leverage NLP + ML for end-to-end automation
 > - Provide visualization and model evaluation
 
+## 📂 Project Structure
+
+```
+
+ai-task-manager/
+│── .devcontainer/             # VSCode + Docker setup for reproducible dev environment
+│── AI_Task_Manager_4Week_Project.ipynb   # Main Jupyter Notebook with step-by-step development
+│   ├─ Week 1: Data preprocessing & EDA
+│   ├─ Week 2: Task classification with NLP (TF-IDF + ML models)
+│   ├─ Week 3: Priority prediction with classifiers
+│   └─ Week 4: Streamlit app integration & deployment
+│── streamlit_app.py           # Streamlit UI to run the app
+│── tasks.csv                  # Sample dataset for tasks
+│── model.pkl                  # Trained ML model (saved with joblib/pickle)
+│── vectorizer.pkl             # TF-IDF vectorizer for text features
+│── requirements.txt           # Dependencies for reproducibility
+│── app_screenshot.png         # Preview image of the Streamlit app
+│── README.md                  # Project documentation (you are here 😉)
+```
+
 ---
+## 🚀 Getting Started
 
-## 🗂️ Project Structure
-
-📁 ai-task-manager/
-├── AI_Powered_Task_Management_System_(1).ipynb # Main project notebook (4-week breakdown)
-├── streamlit_app.py # Deployed Streamlit app code
-├── tasks.csv # Sample task dataset
-├── model.pkl # Trained ML model (joblib)
-├── vectorizer.pkl # TF-IDF Vectorizer
-└── README.md # Project documentation
-
-yaml
-Copy
-Edit
+1. **Clone the Repository**
+```bash
+git clone https://github.com/Tousif18/ai-task-manager.git
+cd ai-task-manager
+```
+2. **Install Dependencies**
+```
+pip install -r requirements.txt
+```
+3. **Run the Streamlit App**
+```
+streamlit run streamlit_app.py
+```
+👉 The app will be live at: http://localhost:8501
 
 ---
 
@@ -87,6 +114,14 @@ Edit
 ![AI Task Manager App](./app_screenshot.png)
 
 
+---
+##  Roadmap
+
+- Add authentication & multi-user support  
+- Schedule reminders and deadline management  
+- Introduce a calendar or Kanban view  
+- Dockerize the app for CI/CD deployment  
+- Support multilingual categorization & priorities
 ---
 
 ## 🌐 Try the App
