@@ -8,7 +8,7 @@
 An intelligent task manager that leverages **Machine Learning** and **Natural Language Processing (NLP)** to classify tasks and predict their priority level — making task organisation smarter and more efficient.
 
 🔗 **Live App**: [Try the Deployed App on Streamlit 🚀](https://ai-task-manager-qvpipgjbmmzk5w2eqqm8jh.streamlit.app/)  
-📂 **Notebook**: [`Project_1_AI_Task_Manager.ipynb`](./AI_Powered_Task_Management_System_(1).ipynb)  
+📂 **Notebook**: [`Project_1_AI_Task_Manager.ipynb`](https://github.com/Tousif18/ai-task-manager/blob/main/AI_Task_Manager_4Week_Project.ipynb)  
 📘 **Training Plan**: Based on a structured 4-week enterprise-level AI project workflow.
 
 ---
@@ -134,7 +134,7 @@ streamlit run streamlit_app.py
 
 **Tousif Azim**  
 🎓 BSc Data Science @ GNIT Kolkata  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/YOUR-LINK/)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/tousifazim/)  
 [![GitHub](https://img.shields.io/badge/GitHub-Tousif18-black?logo=github)](https://github.com/Tousif18)  
 📧 Email: tousifazim.ds@gmail.com  
 
