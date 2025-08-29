@@ -1,9 +1,9 @@
-# 🧠 AI-Powered Task Management System
-![Python](https://img.shields.io/badge/Python-3.9-blue.svg)
-![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red)
-![Machine Learning](https://img.shields.io/badge/ML-ScikitLearn-orange)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Status](https://img.shields.io/badge/Status-Deployed-brightgreen)
+# 🧠 AI-Powered Task Management System  
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)  
+[![Streamlit](https://img.shields.io/badge/Streamlit-Deploy-red.svg)](https://streamlit.io/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)](#)  
+
 
 An intelligent task manager that leverages **Machine Learning** and **Natural Language Processing (NLP)** to classify tasks and predict their priority level — making task organisation smarter and more efficient.
 
@@ -135,9 +135,9 @@ streamlit run streamlit_app.py
 
 **Tousif Azim**  
 🎓 BSc Data Science @ GNIT Kolkata  
-📧 tousifazim.ds@gmail.com  
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/tousifazim)  
-💻 [GitHub](https://github.com/Tousif18)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/YOUR-LINK/)  
+[![GitHub](https://img.shields.io/badge/GitHub-Tousif18-black?logo=github)](https://github.com/Tousif18)  
+📧 Email: tousifazim.ds@gmail.com  
 
 ---
 
