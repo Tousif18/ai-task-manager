@@ -26,19 +26,18 @@ An intelligent task manager that leverages **Machine Learning** and **Natural La
 ```
 
 ai-task-manager/
-│── .devcontainer/             # VSCode + Docker setup for reproducible dev environment
-│── AI_Task_Manager_4Week_Project.ipynb   # Main Jupyter Notebook with step-by-step development
-│   ├─ Week 1: Data preprocessing & EDA
-│   ├─ Week 2: Task classification with NLP (TF-IDF + ML models)
-│   ├─ Week 3: Priority prediction with classifiers
-│   └─ Week 4: Streamlit app integration & deployment
-│── streamlit_app.py           # Streamlit UI to run the app
-│── tasks.csv                  # Sample dataset for tasks
-│── model.pkl                  # Trained ML model (saved with joblib/pickle)
-│── vectorizer.pkl             # TF-IDF vectorizer for text features
-│── requirements.txt           # Dependencies for reproducibility
-│── app_screenshot.png         # Preview image of the Streamlit app
-│── README.md                  # Project documentation (you are here)
+│── .devcontainer/             # VSCode + Docker setup (optional)
+│── AI_Task_Manager_4Week_Project.ipynb   # Main Jupyter Notebook
+│── streamlit_app.py           # Streamlit UI
+│── tasks.csv                  # Sample dataset
+│── model.pkl                  # Trained ML model
+│── vectorizer.pkl             # TF-IDF vectorizer
+│── requirements.txt           # Dependencies
+│── .gitignore                 # Ignore unnecessary files
+│── LICENSE                    # MIT License
+│── app_screenshot.png         # App preview image
+│── README.md                  # Documentation
+
 ```
 
 ---
