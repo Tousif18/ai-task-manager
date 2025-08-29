@@ -5,7 +5,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Deployed-brightgreen)
 
-An intelligent task manager that leverages **Machine Learning** and **Natural Language Processing (NLP)** to classify tasks and predict their priority level — making task organization smarter and more efficient.
+An intelligent task manager that leverages **Machine Learning** and **Natural Language Processing (NLP)** to classify tasks and predict their priority level — making task organisation smarter and more efficient.
 
 🔗 **Live App**: [Try the Deployed App on Streamlit 🚀](https://ai-task-manager-qvpipgjbmmzk5w2eqqm8jh.streamlit.app/)  
 📂 **Notebook**: [`Project_1_AI_Task_Manager.ipynb`](./AI_Powered_Task_Management_System_(1).ipynb)  
@@ -16,10 +16,10 @@ An intelligent task manager that leverages **Machine Learning** and **Natural La
 ## 🧩 Problem Statement
 
 > Design and develop an intelligent task management system that can:
-> - Automatically classify tasks into categories (e.g., work, personal, urgent)
+> - Automatically classify tasks (e.g., work, personal, urgent)
 > - Predict task priority (e.g., High, Medium, Low)
 > - Leverage NLP + ML for end-to-end automation
-> - Provide visualization and model evaluation
+> - Provide visualisation and model evaluation
 
 ## 📂 Project Structure
 
@@ -38,7 +38,7 @@ ai-task-manager/
 │── vectorizer.pkl             # TF-IDF vectorizer for text features
 │── requirements.txt           # Dependencies for reproducibility
 │── app_screenshot.png         # Preview image of the Streamlit app
-│── README.md                  # Project documentation (you are here 😉)
+│── README.md                  # Project documentation (you are here)
 ```
 
 ---
@@ -103,7 +103,7 @@ streamlit run streamlit_app.py
 | `Pandas`, `NumPy` | Data manipulation |
 | `NLTK` | Text preprocessing |
 | `Scikit-learn` | ML models and evaluation |
-| `Matplotlib`, `Seaborn` | Visualizations |
+| `Matplotlib`, `Seaborn` | Visualisations |
 | `Streamlit` | App deployment |
 | `joblib` | Model serialization |
 
@@ -121,7 +121,7 @@ streamlit run streamlit_app.py
 - Schedule reminders and deadline management  
 - Introduce a calendar or Kanban view  
 - Dockerize the app for CI/CD deployment  
-- Support multilingual categorization & priorities
+- Support multilingual categorisation & priorities
 ---
 
 ## 🌐 Try the App
